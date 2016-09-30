@@ -4,6 +4,30 @@
 		<meta charset="utf-8">
 		<style>
 
+    body{
+      font:0.8em Verdena, Arial;
+      padding: 20px;
+      background-color: #eee;
+      }
+
+    input[type=text], input[type=email]{
+      border: solid 1px grey;
+      width: 200px;
+      display: inline-block;
+
+    }
+    label{
+      width: 140px;
+      text-align: left;
+      display: inline-block;
+      }
+    input[type=submit]{
+      border: solid 1px grey;
+      width: 75px;
+      display: inline-block;;
+      margin-left: 200px;
+      background-color: #ddd;
+    }
 
     </style>
 	</head>
@@ -19,11 +43,11 @@
             <input type="email" id="txtEmail1" name="txtEmail1" required>
         </p>
         <p>
-            <label for="txtEmail2">Votre nom * : </label>
+            <label for="txtEmail2">Votre eMail * : </label>
             <input type="email" id="txtEmail2" name="txtEmail2" required>
         </p>
         <p>
-            <label for="txtCP">Votre nom * : </label>
+            <label for="txtCP">Votre code Postal * : </label>
             <input type="text" id="txtCP" name="txtCP" pattern="^[0-9]{5}$" maxlength="5">
         </p>
         <p><input type="submit" id="btnEnvoyer" name="btnEnvoyer" value="Envoyer"/>
