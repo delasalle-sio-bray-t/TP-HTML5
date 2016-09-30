@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Insert title here</title>
+		<style>
+
+    body{	font:0.8em Verdana, arial, Helvetica, sans-cherif;
+
+    }
+    #inscription{
+      position: absolute;
+      left: 300px;
+      top: 50px;
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      /* animation*/
+      -webkit-animation: clignotement ease-in infinite alternate 500ms;
+      -moz-animation: clignotement ease-in infinite alternate 500ms;
+      -o-animation: clignotement ease-in infinite alternate 500ms;
+      animation: clignotement ease-in infinite alternate 500ms;
+
+    }
+    -webkit-keyframes clignotement{
+     0% {box-shadow: 0 0 15px red;}
+    
+     100% {box-shadow: 0 0 15px yellow}
+    }
+
+    @-moz-keyframes clignotement{
+      0% {box-shadow: 0 0 15px red;}
+      100% {box-shadow: 0 0 15px yellow}
+    }
+
+    @-o-keyframes clignotement{
+      0% {box-shadow: 0 0 15px red;}
+      100% {box-shadow: 0 0 15px yellow}
+    }
+
+    @keyframes clignotement{
+      0% {box-shadow: 0 0 15px red;}
+
+      100% {box-shadow: 0 0 15px yellow}
+    }
+
+
+		</style>
+	</head>
+	<body>
+    <form id="inscription" method="#" action="#">
+      <p>
+        <label for="txtNom">Votre nom : </label>
+        <input type="text" id="txtNom"/>
+      </p>
+      <p>
+        <label for="txtMail">Votre mail : </label>
+        <input type="text" id="txtMail"/>
+      </p>
+    <p>  <input type="submit" id="btnSend" value="Envoyer"/></p>
+	</form>
+
+	</body>
+</html>

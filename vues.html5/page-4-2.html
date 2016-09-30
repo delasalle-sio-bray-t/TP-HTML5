@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Insert title here</title>
+		<style>
+	     #image{
+         position: absolute;
+         left: 20px;
+         top: 20px;
+
+         /*Animation*/
+         -webkit-animation: rotation_deplacement_effacement 5s infinite;
+         -moz-animation: rotation_deplacement_effacement 5s infinite;
+         -o-animation: rotation_deplacement_effacement 5s infinite;
+         animation: rotation_deplacement_effacement 5s ;
+
+
+       }
+       #image2{
+         position: absolute;
+         left: 400px;
+         top: 20px;
+          animation: rotation_deplacement_affichage 5s ;
+          animation-delay: 2.5s;
+          opacity: 0;
+       }
+       @-webkit-keyframes rotation_deplacement_effacement{
+        0% {opacity: 1; -webkit-transform: rotate(0deg); left: 20px}
+        100% {opacity: 0; -webkit-transform: rotate(360deg); left: 400px}
+       }
+
+       @-moz-keyframes rotation_deplacement_effacement{
+         0% {opacity: 1; -moz-transform: rotate(0deg); left: 20px}
+         100% {opacity: 0; -moz-transform: rotate(360deg); left: 400px}
+       }
+
+       @-o-keyframes rotation_deplacement_effacement{
+         0% {opacity: 1; -o-transform: rotate(0deg); left: 20px}
+         100% {opacity: 0; -o-transform: rotate(360deg); left: 400px}
+       }
+
+       @keyframes rotation_deplacement_effacement{
+         0% {opacity: 1; transform: rotate(0deg); left: 20px}
+         100% {opacity: 0; transform: rotate(360deg); left: 400px}
+       }
+       @keyframes rotation_deplacement_affichage{
+         0% {opacity: 0; transform: rotate(0deg); left: 400px}
+         100% {opacity: 1; transform: rotate(360deg); left: 800px}
+       }
+
+		</style>
+	</head>
+	<body>
+    <div id="image"><img src="../images-tp-4-2/smiley100.jpg" alt="fromage"/></div>
+    <div id="image2"><img src="../images-tp-4-2/smiley200.jpg" alt="fromage"/></div>
+
+	</body>
+</html>

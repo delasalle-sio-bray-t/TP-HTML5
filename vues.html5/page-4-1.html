@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		<style>
+			body{
+				background-color: black;
+				margin: 0px;
+				padding: 10px;
+			}
+
+			#espace{
+				background-image:url('../images-tp-4-1/espace1.jpg');
+				width: 700px;
+				height:437px;
+				border: 1px solid black;
+				margin: 30px auto;
+			}
+
+			#soucoupe{
+        position: relative;
+        background-image: url('../images-tp-4-1/soucoupe1.gif');
+        width: 100px;
+        height: 76px;
+        margin: 0px;
+
+        /*animation*/
+        -webkit-animation: deplacement_soucoupe 5s infinite;
+        -moz-animation: deplacement_soucoupe 5s infinite;
+        -o-animation: deplacement_soucoupe 5s infinite;
+        animation: deplacement_soucoupe 5s infinite;
+			}
+      @-webkit-keyframes deplacement_soucoupe{
+        0% {left:0; top:0;}
+        25% {left: 600px; top: 0;}
+        50% {left: 600px; top: 400px;}
+        75% {left: 0; top: 400px;}
+        100% {left: 0; top: 0;}
+      }
+
+      @-moz-keyframes deplacement_soucoupe{
+        0% {left:0; top:0;}
+        25% {left: 600px; top: 0;}
+        50% {left: 600px; top: 400px;}
+        75% {left: 0; top: 400px;}
+        100% {left: 0; top: 0;}
+      }
+
+      @-o-keyframes deplacement_soucoupe{
+        0% {left:0; top:0;}
+        25% {left: 650px; top: 0;}
+        50% {left: 600px; top: 400px;}
+        75% {left: 0; top: 400px;}
+        100% {left: 0; top: 0;}
+      }
+
+      @keyframes deplacement_soucoupe{
+        0% {left:0; top:0;}
+        25% {left: 600px; top: 0;}
+        50% {left: 600px; top: 350px;}
+        75% {left: 0; top: 350px;}
+        100% {left: 0; top: 0;}
+      }
+
+
+
+		</style>
+	</head>
+	<body>
+      <div id="espace">
+          <div id="soucoupe"></div>
+        </div>
+	</body>
+</html>

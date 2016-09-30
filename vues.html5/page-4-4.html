@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Insert title here</title>
+		<style>
+		html{
+			height: 100%;
+		}
+    body{	font:1em Verdana, arial, Helvetica, sans-cherif;
+			background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
+			background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
+			background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(210, 210, 210));
+
+    }
+		div#page{
+			width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			border: #000 1px solid;
+			text-align: left;
+
+			-moz-border-radius: 15px;
+			-webkit-border-radius: 15px;
+			-o-border-radius: 15px;
+			border-radius: 15px;
+			background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
+			background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
+			background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(210, 210, 210));
+		}
+		a.bouton, button{
+			font : 1em Helvetica, sans-cherif;
+			margin: 1em auto;
+			display: block;
+			width: 250px;
+			background: #ccc;
+			text-align: center;
+			text-decoration: none;
+			color: black;
+			padding: 5px 0 5px 0;
+			text-shadow: 0 1px 0 #fff;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+
+			border-radius: 7px;
+			background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(210,210,210));
+			box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.3);
+
+		}
+.class_message > div{
+		width: 500px;
+		background: #fff;
+		position: relative;
+		margin: 10% auto;
+		padding: 30px;
+		text-shadow: 0 1px 0 #fff;
+		border-radius: 15px;
+		box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+		background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
+		background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
+		background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(210, 210, 210));
+
+}
+
+#affichage_message h2.class_avertissement{
+	padding-left: 50px;
+	line-height: 32px;
+	background: url('../images-tp-4-4/avertissement.png') no-repeat left bottom;
+	color: #0b4c8e;
+
+}
+#affichage_message h2.class_info{
+	padding-left: 50px;
+	line-height: 32px;
+	background: url('../images-tp-4-4/information.png') no-repeat left bottom;
+	color: #0b4c8e;
+
+}
+#affichage_message p.class_texte_message{
+	padding-left: 50px;
+	font-size: 1.2em;
+
+}
+
+.class_message a{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #000;
+}
+
+.class_message{
+
+	position: fixed;
+	top: 0;
+	left:0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.3);
+	z-index: 10000;
+	transition: opacity 500ms ease-in;
+	opacity: 0;
+	pointer-events: none;
+}
+.class_message:target{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+@keyframes animation_ouverture {
+	0%{transform: scale3d(0.1, 0.1, 1);box-shadow: 0 10px 20px rgba(0,0,0,0.9);}
+		55%{transform: scale3d(1.08, 1.08, 1);box-shadow: 0 10px 20px rgba(0,0,0,0);}
+			75%{transform: scale3d(0.95, 0.95, 1);box-shadow: 0 0px 20px rgba(0,0,0,0.9);}
+			10	0%{transform: scale3d(1, 1, 1);box-shadow: 0 3px 20px rgba(0,0,0,0.9);}
+	}
+.class_message:target > div{
+	animation: animation_ouverture 1000ms linear
+}
+@keyframe animation_fermeture{
+	0% {transform:scale3d(1,1,1)}
+	100% {transform: scale3d(0.1,0.1,1)}
+}
+
+.class_message > div{
+	animation: animation_fermeture 500ms linear;
+}
+
+		</style>
+
+    <script>
+		window.onload = initialisations;
+
+		function initialisations(){
+			document.getElementById("btnInformation").onclick = function(){
+				afficher_information('Info');
+			};
+			document.getElementById("btnAvertissement").onclick = function(){
+				afficher_avertissement("Avertissement");
+			};
+		}
+		function afficher_information(msg){
+			document.getElementById("titre_message").innerHTML = "Info";
+			document.getElementById("titre_message").className = "class_info";
+			document.getElementById("texte_message").innerHTML = msg;
+			window.open("#affichage_message","_self");
+		}
+		function afficher_avertissement(msg){
+			document.getElementById("titre_message").innerHTML = "Avertissement ;;;";
+			document.getElementById("titre_message").className = "class_avertissement";
+			document.getElementById("texte_message").innerHTML = msg;
+			window.open("#affichage_message","_self");
+		}
+    </script>
+	</head>
+	<body>
+    <div id="page">
+      <p><a id="lien" href="#affichage_message" class="bouton">Ouvrir la fenetre de message</a></p>
+      <p><button id="btnInformation">Afficher une info</button></p>
+    	<p><button id="btnAvertissement">Afficher un avertissement</button></p>
+    </div>
+    <aside id="affichage_message" class="class_message">
+      <div>
+        <h2 id="titre_message" class="class_info">Message</h2>
+        <p id="texte_message" class="class_avertissement">TEEXTE <br>SUR 2 LIGNES§§!!!!!</p>
+				<a href="#close" title="Fermer">Fermer</a>
+			</div>
+</aside>
+	</body>
+</html>
