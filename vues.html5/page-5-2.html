@@ -121,6 +121,7 @@
 				document.getElementById("caseAfficherMdp").onchange = afficherMdp;
 				document.getElementById("txtNouveauMdp").focus();	
 			}
+			//permet de afficher le mot de passe en clair
 			function afficherMdp(){
 				if(document.getElementById("caseAfficherMdp").checked== true)
 					{
@@ -134,6 +135,30 @@
 					
 					}
 				
+			}
+			
+			function validationGenerale{
+				if(document.getElementById("txtNouveauMdp").value==""){
+					afficher_avertissement("Le nouveau de passe doit etre saisi");
+					document.getElementById("txtNouveauMdp").focus();
+					return false;
+				}
+				if(document.getElementById("txtConfirmation").value==""){
+					afficher_avertissement("Le nouveau de passe doit etre saisi");
+					document.getElementById("txtConfirmation").focus();
+					return false;
+				}
+				if(estUnMdpCorrect(document.getElementById("txtNouveauMdp").value)==false){
+					afficher_avertissement("8 caractères minimum avec au moins un chiffre une lettre et une majuscule ");
+					document.getElementById("txtNouveauMdp").focus();
+					return false;
+				}
+				if(document.getElementById("txtNouveauMdp").value!=document.getElementById("txtConfirmation").value){
+					afficher_avertissement("Les 2 valeurs sont différentes");
+					document.getElementById("txtNouveauMdp").focus();
+					return false;
+				}
+				return true;
 			}
 		</script>
 	</head>
