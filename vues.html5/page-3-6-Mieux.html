@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Retourne le carré</title>
+		<style>
+			html{
+			font: 2em sans-sherif;
+			text-align: center;
+			}
+			.scene{
+				width: 200px;
+				height: 200px;
+				margin: 20px auto;
+			}
+			.avant, .apres{
+				width: inherit;
+				height: inherit;
+				position: absolute;
+				
+				-moz-backface-visibility: hidden;
+				backface-visibility: hidden;
+				-moz-transition:transform 1s;
+				transition:transform 1s;
+				
+			}
+			
+			.avant{
+			line-height: 200px;
+				background: tomato;
+				-moz-transform:perspective(600px) rotateX(0deg);
+				transform:perspective(600px) rotateX(0deg);
+			}
+			.apres{
+				background: deepskyblue;
+				-moz-transform:perspective(600px) rotateX(180deg);
+				transform:perspective(600px) rotateX(180deg);
+			}
+			.scene:hover .avant{
+				-moz-transform:perspective(600px) rotateX(180deg);
+				transform:perspective(600px) rotateX(180deg);
+			}
+			.scene:hover .apres{
+				-moz-transform:perspective(600px) rotateX(360deg);
+				transform:perspective(600px) rotateX(360deg);
+			}
+			
+		</style>
+	<script>
+		window.onload = initialisations;
+
+		function initialisations(){
+			document.getElementById("btnKillian").onclick = function(){
+				killian();
+			};
+			document.getElementById("btnAvertissement").onclick = function(){
+				afficher_avertissement("Avertissement");
+			};
+		}
+
+			
+			function killian(element)
+			{
+			  document.getElementById("image").src = "../images/killian2.jpg";
+			}
+		
+		
+    </script>
+	</head>
+	<body>
+		<h3>L'effet flip-card</h3>
+		<div class="scene">
+			<div class="avant">HELLO</div>
+			<div class="apres"><img class="image" id="image" src="../images/bastien.jpg " height=200px width=200px>
+			Surprise
+			</div>
+			
+		</div>
+	<div class="Bouton"> <p><button id="btnKillian">Killian</button></p></div>
+	</body>
+</html>
